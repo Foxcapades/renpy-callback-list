@@ -1,6 +1,6 @@
 = Ren'Py Callback List
 
-Create a list of character callbacks with ease!
+Create lists of character callbacks with ease!
 
 Have you ever needed to create multiple callbacks on the same character that
 do different things?  Do you not want to have to cram unrelated things into a
