@@ -1,4 +1,4 @@
-= Ren'Py Callback List
+= Ren'Py Character Callback List
 
 Create lists of character callbacks with ease!
 
