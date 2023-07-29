@@ -37,7 +37,8 @@ define e = Character("Eileen", callback=CallbackList(callback1, callback2))
 
 === Examples
 
-.Inline `CallbackList`
+*Inline CallbackLists*
+
 --
 If you only have one character that you want to apply the `CallbackList` to,
 you can inline the construction of that `CallbackList` in the character
@@ -49,7 +50,8 @@ define e = Character("Eileen", callback=CallbackList(callback1, callback2))
 ----
 --
 
-.Separate `CallbackList`
+*Separate CallbackLists*
+
 --
 If you want to use the same `CallbackList` for multiple characterse, you may
 define it separately and pass it to the character constructors:
