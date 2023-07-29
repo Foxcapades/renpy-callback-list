@@ -1,4 +1,4 @@
-= Ren'Py Say Stack
+= Ren'Py Callback List
 
 Create a list of character callbacks with ease!
 
