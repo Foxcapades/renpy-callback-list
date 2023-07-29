@@ -53,7 +53,7 @@ define e = Character("Eileen", callback=CallbackList(callback1, callback2))
 *Separate CallbackLists*
 
 --
-If you want to use the same `CallbackList` for multiple characterse, you may
+If you want to use the same `CallbackList` for multiple characters, you may
 define it separately and pass it to the character constructors:
 
 [source, python]

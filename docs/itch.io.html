@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Character Callback List</title>
+</head>
+
+<body>
+
+<!-- COPY FROM HERE UNTIL THE NEXT COMMENT -->
+
+<p>
+  Create lists of character callbacks with ease!
+</p>
+<p>
+  Have you ever needed to create multiple callbacks on the same character that
+  do different things?  Do you not want to cram unrelated things into a single
+  callback?  If so, this is the tool for you!
+</p>
+<p>
+  This library provides a tiny helper class called <code>CallbackList</code>
+  that groups multiple character callbacks into a single callable!
+</p>
+<p>
+  It's just a class that wraps callbacks, it's that simple!
+</p>
+
+<h2>Usage</h2>
+<pre>
+init python:
+    def cb1(event, interact=True, **kwargs):
+        ...
+
+    def cb2(event, interact=True, **kwargs):
+        ...
+
+define e = Character("Eileen", callback=CallbackList(cb1, cb2))
+</pre>
+<ol>
+  <li>Create your character callbacks</li>
+  <li>Define your character(s)</li>
+  <li>Create a <code>CallbackList</code></li>
+  <li>Pass that <code>CallbackList</code> to the target character(s) with the <code>callback</code> keyword.</li>
+</ol>
+
+<h3>Examples</h3>
+<h4>Inline CallbackLists</h4>
+<p>
+  If you only have one character that you want to apply the
+  <code>CallbackList</code> to, you can inline the construction of that
+  <code>CallbackList</code> in the character constructor:
+</p>
+<pre>
+define e = Character("Eileen", callback=CallbackList(cb1, cb2))
+</pre>
+
+<h4>Separate CallbackLists</h4>
+<p>
+  If you want to use the same CallbackList for multiple characters, you may
+  define it separately and pass it to the character constructors:
+</p>
+<pre>
+define my_cb_list = CallbackList(cb1, cb2)
+
+define a = Character("Annie", callback=my_cb_list)
+define e = Character("Eileen", callback=my_cb_list)
+</pre>
+
+<h2>License</h2>
+<p>
+  This source code and project are released under the MIT license, which to
+  paraphrase in a way that is not legally binding:
+</p>
+<ul>
+  <li>You can use it for free things</li>
+  <li>You can use it for paid things</li>
+  <li>You can modify it however you see fit</li>
+  <li>You can redistribute it as you see fit</li>
+  <li>Go nuts!</li>
+</ul>
+<p>
+  For a better breakdown of what the license actually means see:
+  <a href="https://choosealicense.com/licenses/mit/">ChooseALicense.com</a>
+</p>
+<p>
+  I do ask that you credit me in some way, but if you don't, I'm not gonna call
+  the open-source police on you. If you do choose to credit me you can do so by
+  providing a link to my <a href="https://github.com/Foxcapades">GitHub</a>,
+  my <a href="https://foxcapades.itch.io/">Itch.io</a>, or just call me
+  Foxcapades.
+</p>
+
+<!-- COPY ABOVE HERE FROM THE PREVIOUS COMMENT -->
+
+</body>
+</html>
