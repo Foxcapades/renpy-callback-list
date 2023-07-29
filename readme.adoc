@@ -1,0 +1,64 @@
+= Ren'Py Say Stack
+
+Create a list of character callbacks with ease!
+
+Have you ever needed to create multiple callbacks on the same character that
+do different things?  Do you not want to have to cram unrelated things into a
+single callback?  If so, this is the tool for you!
+
+This library provides a new class called `CallbackList` that allows you to group
+multiple character callbacks into a single callable!
+
+It's just a class wrapping a list of callbacks, it's that simple!
+
+[IMPORTANT]
+--
+This library only supports Ren'Py versions 8.1+
+--
+
+== Usage
+
+[source, python]
+----
+init python:
+    def callback1(event, interact=True, **kwargs):
+        ...
+
+    def callback2(event, interact=True, **kwargs):
+        ...
+
+define e = Character("Eileen", callback=CallbackList(callback1, callback2))
+----
+
+. Create your character callbacks.
+. Define your character(s)
+. Create a `CallbackList`
+. Pass that `CallbackList` to the character(s) with the `callback` keyword.
+
+=== Examples
+
+.Inline `CallbackList`
+--
+If you only have one character that you want to apply the `CallbackList` to,
+you can inline the construction of that `CallbackList` in the character
+constructor:
+
+[source, python]
+----
+define e = Character("Eileen", callback=CallbackList(callback1, callback2))
+----
+--
+
+.Separate `CallbackList`
+--
+If you want to use the same `CallbackList` for multiple characterse, you may
+define it separately and pass it to the character constructors:
+
+[source, python]
+----
+define my_cb_list = CallbackList(callback1, callback2)
+
+define a = Character("Annie", callback=my_cb_list)
+define e = Character("Eileen", callback=my_cb_list)
+----
+--
