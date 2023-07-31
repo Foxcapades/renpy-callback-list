@@ -21,7 +21,7 @@ release: pre-release build-base-project-zip build-slim-zip build-distributions
 
 .PHONY: pre-release
 pre-release: clean
-	@rm -rf .build
+	@rm -rf .build traceback.txt log.txt errors.txt
 
 
 .PHONY: build-base-project-zip
